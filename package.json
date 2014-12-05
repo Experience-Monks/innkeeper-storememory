@@ -1,0 +1,30 @@
+{
+  "name": "innkeeper-storememory",
+  "version": "1.0.0",
+  "description": "This is an in memory store used by innkeeper. It handles room creation, management, keys, and data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jam3/innkeeper-storememory.git"
+  },
+  "keywords": [
+    "innkeeper",
+    "store",
+    "memory"
+  ],
+  "author": "Mikko Haapoja <me@mikkoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jam3/innkeeper-storememory/issues"
+  },
+  "homepage": "https://github.com/Jam3/innkeeper-storememory",
+  "dependencies": {
+    "bluebird": "^2.3.11"
+  },
+  "devDependencies": {
+    "tape": "^3.0.3"
+  }
+}
