@@ -2,7 +2,8 @@ var test = require( 'tape' ),
 	promise = require( 'bluebird' ),
 	storeMemory = require( './..' );
 
-var store, roomId, key;
+var USER_ID = 0,
+	store, roomId, key;
 
 test( 'create a room', function( t ) {
 
@@ -12,7 +13,7 @@ test( 'create a room', function( t ) {
 
 	t.ok( store, 'A store was created' );
 
-	store.createRoom()
+	store.createRoom( USER_ID )
 	.then( function( id ) {
 
 		roomId = id;
