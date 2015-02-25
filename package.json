@@ -1,6 +1,6 @@
 {
   "name": "innkeeper-storememory",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This is an in memory store used by innkeeper. It handles room creation, management, keys, and data.",
   "main": "index.js",
   "scripts": {
