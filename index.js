@@ -23,11 +23,12 @@ function storeMemory() {
 	if( !( this instanceof storeMemory ) )
 		return new storeMemory();
 
+	EventEmitter.call( this );
+
 	this.generateKeys();
 }
 
-var p = storeMemory.prototype = new EventEmitter();
-
+var p = storeMemory.prototype = Object.create( EventEmitter.prototype );
 
 /**
  * This will create a roomID, roomDataObject, and users array for the room
