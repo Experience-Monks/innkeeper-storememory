@@ -6,6 +6,7 @@ var curId = Number.MIN_VALUE,
 	keyToId = {},
 	roomData = {},
 	roomUsers = {},
+	publicRooms = [],
 	keys;
 
 module.exports = storeMemory;
@@ -299,6 +300,40 @@ p.setRoomData = function( roomID, data ) {
 	roomData[ roomID ] = data;
 
 	return promise.resolve( data );
+};
+
+/**
+ * Set room as public
+ * 
+ * @param  {String} roomID id for the room you'd like to make public
+ * @return {Promise} This promise will succeed when the room as been set as public
+ */
+p.makeRoomPublic = function( roomID ) {
+
+	if( roomData[ roomID ] === undefined ) {
+		
+		return promise.reject( 'There is no room by that id' );
+	} else {
+		publicRooms.push( roomID );
+		return promise.resolve( );
+	}
+};
+
+/**
+ * Gets first first available public room
+ * 
+ * @return {Promise} This promise will succeed when the room has been retrieved
+ */
+p.getPublicRoom = function() {
+
+	if ( publicRooms.length > 0 ) {
+
+		return promise.resolve( publicRooms.shift() );
+	} else {
+
+		return promise.reject( 'No available public rooms' );
+	}
+
 };
 
 /**
