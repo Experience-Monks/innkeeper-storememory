@@ -320,6 +320,24 @@ p.makeRoomPublic = function( roomID ) {
 };
 
 /**
+ * Set room as private, removing it from the publicly available list
+ * 
+ * @param  {String} roomID id for the room you'd like to make private
+ * @return {Promise} This promise will succeed when the room as been set as private
+ */
+p.makeRoomPrivate = function( roomID ) {
+
+	if( roomData[ roomID ] === undefined ) {
+		
+		return promise.reject( 'There is no room by that id' );
+	} else {
+		var roomIndex = publicRooms.indexOf( roomID );
+		if (roomIndex >= 0) publicRooms.splice( roomIndex, 1 )
+		return promise.resolve( );
+	}
+};
+
+/**
  * Gets first first available public room
  * 
  * @return {Promise} This promise will succeed when the room has been retrieved
@@ -328,7 +346,7 @@ p.getPublicRoom = function() {
 
 	if ( publicRooms.length > 0 ) {
 
-		return promise.resolve( publicRooms.shift() );
+		return promise.resolve( publicRooms[0] );
 	} else {
 
 		return promise.reject( 'No available public rooms' );
