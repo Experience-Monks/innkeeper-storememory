@@ -308,7 +308,7 @@ p.setRoomData = function( roomID, data ) {
  * @param  {String} roomID id for the room you'd like to make public
  * @return {Promise} This promise will succeed when the room as been set as public
  */
-p.makeRoomPublic = function( roomID ) {
+p.setRoomPublic = function( roomID ) {
 
 	if( roomData[ roomID ] === undefined ) {
 		
@@ -325,7 +325,7 @@ p.makeRoomPublic = function( roomID ) {
  * @param  {String} roomID id for the room you'd like to make private
  * @return {Promise} This promise will succeed when the room as been set as private
  */
-p.makeRoomPrivate = function( roomID ) {
+p.setRoomPrivate = function( roomID ) {
 
 	if( roomData[ roomID ] === undefined ) {
 		
